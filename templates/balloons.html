@@ -4,61 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Balloons</title>
-    <link rel="shortcut icon" type="image" href="./images/cake.jpeg">
-    <link rel="stylesheet" href="style.css">
-    <!-- bootstrap links -->
+    <title>Delicious Cake House - Product Catalog</title>
+    <link rel="shortcut icon" type="image" href="{{ url_for('static', filename='images/cake.jpeg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- bootstrap links -->
-    <!-- fonts links -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <!-- fonts links -->
-    <!-- icons links -->
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <!-- icons links -->
-    <!-- animation links -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- animation links -->
 </head>
 <body>
     <div class="all-content">
-        <!-- navbar -->
         <nav class="navbar navbar-expand-md" id="navbar">
-            <!-- Brand -->
-            <a class="navbar-brand" href="#" id="logo"><img src="./images/cake.jpeg" alt="" width="50px">Delicious Cake House</a>
-    
-            <!-- Toggler/collapsibe Button -->
+            <a class="navbar-brand" href="#" id="logo"><img src="{{ url_for('static', filename='images/cake.jpeg') }}" alt="" width="50px">Delicious Cake House</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span><img src="./images/menu.png" alt="" width="30px"></span>
+                <span><img src="{{ url_for('static', filename='images/menu.png') }}" alt="" width="30px"></span>
             </button>
-        
-            <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
+                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
                     </li>
                     <!-- dropdown -->
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Category </a>
+                        <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">Products </a>
                         <div class="dropdown-menu">
-                            <a href="/balloons.html" class="dropdown-item">Balloons</a>
-                            <a href="/bdaycart.html" class="dropdown-item">Bday Cards</a>
-                            <a href="/Cakes.html" class="dropdown-item">Cakes</a>
-                            <a href="/candles.html" class="dropdown-item">Candles</a>
-                            <a href="/crowns.html" class="dropdown-item">Crowns</a>
-                            <a href="/Sash.html" class="dropdown-item">Sash Designs</a>
+                            <a href="{{ url_for('balloons') }}" class="dropdown-item">Balloons</a>
+                            <a href="{{ url_for('bdaycards') }}" class="dropdown-item">Bday Cards</a>
+                            <a href="{{ url_for('cakes') }}" class="dropdown-item">Cakes</a>
+                            <a href="{{ url_for('candles') }}" class="dropdown-item">Candles</a>
+                            <a href="{{ url_for('crowns') }}" class="dropdown-item">Crowns</a>
+                            <a href="{{ url_for('sash') }}" class="dropdown-item">Sash Designs</a>
                         </div>
                     </li>
                     <!-- dropdown -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Reviews</a>
                     </li>
@@ -71,280 +46,48 @@
                 </ul>
             </div>
             <div class="icons">
-                <img src="./images/heart.png" alt="" width="20px">
-                <img src="./images/download.png" alt="" width="20px">
-                <img src="./images/add.png" alt="" width="24px">
+                <img src="{{ url_for('static', filename='images/heart.png') }}" alt="" width="20px">
+                <img src="{{ url_for('static', filename='images/download.png') }}" alt="" width="20px">
+                <img src="{{ url_for('static', filename='images/add.png') }}" alt="" width="24px">
             </div>
         </nav>
-        <!-- navbar end -->
-
-
-    <!-- product cards -->
-    <section id="product-cards"    data-aos="fade-up"
-    data-aos-duration="1500">
-        <div class="container">
-            <h1>Our Products</h1>
-            <div class="row" style="margin-top:50px;">
-            <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
-                    <div class="overlay">
-                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./images/views.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./images/heart.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./images/add.png" alt="" width="30px"></i></button>
-                    </div>
-                    <img src="./images/bn1.jpg" alt="">
-                    <div class="card-body">
-                        <h3>Bday Balloons</h3>
-                        <div class="star">
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star "></i>
-                        </div>
-                        <h6>$60.00 <span><button>Buy Now</button></span></h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
-                    <div class="overlay">
-                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./images/views.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./images/heart.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./images/add.png" alt="" width="30px"></i></button>
-                    </div>
-                    <img src="./images/bn2" alt="">
-                    <div class="card-body">
-                        <h3>Bday Ballons</h3>
-                        <div class="star">
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        </div>
-                        <h6>$70.00 <span><button>Buy Now</button></span></h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
-                    <div class="overlay">
-                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./images/views.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./images/heart.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./images/add.png" alt="" width="30px"></i></button>
-                    </div>
-                    <img src="./images/bn3.jpeg" alt="">
-                    <div class="card-body">
-                        <h3>Bday Balloons</h3>
-                        <div class="star">
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star "></i>
-                        <i class="bx bxs-star "></i>
-                        </div>
-                        <h6>$50.00 <span><button>Buy Now</button></span></h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
-                    <div class="overlay">
-                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./images/views.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./images/heart.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./images/add.png" alt="" width="30px"></i></button>
-                    </div>
-                    <img src="./images/bn4.jpg" alt="">
-                    <div class="card-body">
-                        <h3>Bday Balloons</h3>
-                        <div class="star">
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star "></i>
-                        </div>
-                        <h6>$110.00 <span><button>Buy Now</button></span></h6>
-                    </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="row" style="margin-top:50px;"    data-aos="fade-up"
-            data-aos-duration="1500">
-            <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
-                    <div class="overlay">
-                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./images/views.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./images/heart.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./images/add.png" alt="" width="30px"></i></button>
-                    </div>
-                    <img src="./images/bn5.jpg" alt="">
-                    <div class="card-body">
-                        <h3>Valentine Balloons</h3>
-                        <div class="star">
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star "></i>
-                        <i class="bx bxs-star "></i>
-                        </div>
-                        <h6>$70.00 <span><button>Buy Now</button></span></h6>
-                    </div>
-                </div>
-            </div>
-                <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
-                    <div class="overlay">
-                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./images/views.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./images/heart.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./images/add.png" alt="" width="30px"></i></button>
-                    </div>
-                    <img src="./images/bn6" alt="">
-                    <div class="card-body">
-                        <h3>Anniversary Balloons</h3>
-                        <div class="star">
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star "></i>
-                        </div>
-                        <h6>$110.00 <span><button>Buy Now</button></span></h6>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
-                    <div class="overlay">
-                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./images/views.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./images/heart.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./images/add.png" alt="" width="30px"></i></button>
-                    </div>
-                    <img src="./images/bn7.jpg" alt="">
-                    <div class="card-body">
-                        <h3>Anniversary Balloons</h3>
-                        <div class="star">
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star "></i>
-                        <i class="bx bxs-star "></i>
-                        </div>
-                        <h6>$115.00 <span><button>Buy Now</button></span></h6>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
-                    <div class="overlay">
-                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./images/views.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./images/heart.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./images/add.png" alt="" width="30px"></i></button>
-                    </div>
-                    <img src="./images/bn8.webp" alt="">
-                    <div class="card-body">
-                        <h3>Anniversary Balloons</h3>
-                        <div class="star">
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star "></i>
-                        </div>
-                        <h6>$200.00 <span><button>Buy Now</button></span></h6>
-                    </div>
-                </div>
-                </div>
-                
-            </div>
-            <div class="row" style="margin-top:50px;"    data-aos="fade-up"
-            data-aos-duration="1500">
-            <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
-                    <div class="overlay">
-                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./images/views.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./images/heart.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./images/add.png" alt="" width="30px"></i></button>
-                    </div>
-                    <img src="./images/bn9.jpg" alt="">
-                    <div class="card-body">
-                        <h3>Retirement Ballons</h3>
-                        <div class="star">
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        </div>
-                        <h6>$70.00 <span><button>Buy Now</button></span></h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 py-3 py-md-0">
-                <div class="card">
-                    <div class="overlay">
-                        <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./images/views.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./images/heart.png" alt="" width="30px"></i></button>
-                        <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./images/add.png" alt="" width="30px"></i></button>
-                    </div>
-                    <img src="./images/bn10.jpg" alt="">
-                    <div class="card-body">
-                        <h3>Retirement Balloons</h3>
-                        <div class="star">
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star checked"></i>
-                        <i class="bx bxs-star "></i>
-                        </div>
-                        <h6>$110.00 <span><button>Buy Now</button></span></h6>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-3 py-3 py-md-0">
-                    <div class="card">
-                        <div class="overlay">
-                            <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./images/views.png" alt="" width="30px"></i></button>
-                            <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./images/heart.png" alt="" width="30px"></i></button>
-                            <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./images/add.png" alt="" width="30px"></i></button>
-                        </div>
-                        <img src="./images/bn11.jpg" alt="">
-                        <div class="card-body">
-                            <h3>Ballons</h3>
-                            <div class="star">
-                            <i class="bx bxs-star checked"></i>
-                            <i class="bx bxs-star checked"></i>
-                            <i class="bx bxs-star checked"></i>
-                            <i class="bx bxs-star checked"></i>
-                            <i class="bx bxs-star "></i>
+        <section id="product-cards" data-aos="fade-up" data-aos-duration="1500">
+            <div class="container">
+                <h1>Our Products</h1>
+                <div class="row" style="margin-top:50px;">
+                    {% for product in products %}
+                    <div class="col-md-3 py-3 py-md-0">
+                        <div class="card">
+                            <div class="overlay">
+                                <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="{{ url_for('static', filename='images/views.png') }}" alt="" width="30px"></i></button>
+                                <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="{{ url_for('static', filename='images/heart.png') }}" alt="" width="30px"></i></button>
+                                <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="{{ url_for('static', filename='images/add.png') }}" alt="" width="30px"></i></button>
                             </div>
-                            <h6>$20.00 each <span><button>Buy Now</button></span></h6>
+                            <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="">
+                            <div class="card-body">
+                                <h3>{{ product.name }}</h3>
+                                <div class="star">
+                                    <i class="bx bxs-star checked"></i>
+                                    <i class="bx bxs-star checked"></i>
+                                    <i class="bx bxs-star checked"></i>
+                                    <i class="bx bxs-star checked"></i>
+                                    <i class="bx bxs-star"></i>
+                                </div>
+                                <h6>${{ product.price }} <span>
+                                    <form action="{{ url_for('checkout') }}" method="post">
+                                        <input type="hidden" name="product_id" value="{{ loop.index0 }}">
+                                        <button type="submit">Buy Now</button>
+                                    </form>
+                                </span></h6>
+                            </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
-        </div>
-    </section>
-
-
-    <!-- product cards ends -->
-
-
-
-    <a href="#" class="arrow"><i><img src="./images/up-arrow.png" alt="" width="50px"></i></a>
-
-
-
+            </div>
+        </section>
     </div>
-
-
-
-
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <a href="#" class="arrow"><i><img src="{{ url_for('static', filename='images/up-arrow.png') }}" alt="" width="50px"></i></a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
