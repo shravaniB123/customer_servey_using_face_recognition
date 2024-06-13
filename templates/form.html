@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Shop - Customer Details</title>
+</head>
+<body>
+    <h1>Form Submitted</h1>
+    <p>Customer Name: {{ customer_name }}</p>
+    <p>Products Ordered: {{ product_ordered }}</p>
+    <p>Event: {{ event }}</p>
+    <p>Date and Time: {{ date_time }}</p>
+    <p>Image Path: <img src="{{ img_path }}" alt="Customer Image"></p>
+
+    {% if discount %}
+        <p><strong>Congratulations! You get 10% off on your order!</strong></p>
+    {% endif %}
+</body>
+</html>
