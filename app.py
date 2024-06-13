@@ -109,7 +109,7 @@ def submit():
 
         return render_template('form.html', customer_name=customer_name, product_ordered=product_ordered, event=event, date_time=date_time, img_path=img_path, discount=discount)
 
-products_balloons = [
+products = [
     {"name": "Bday Balloons", "price": 60.00, "image": "bn1.jpg"},
     {"name": "Bday Balloons", "price": 70.00, "image": "bn2.jpg"},
     {"name": "Bday Balloons", "price": 50.00, "image": "bn3.jpeg"},
@@ -125,7 +125,7 @@ products_balloons = [
 
 @app.route('/balloons')
 def balloons():
-    return render_template('balloons.html', products=products_balloons)
+    return render_template('balloons.html', products=products[:9])
 
 @app.route('/bdaycards')
 def bdaycards():
