@@ -13,18 +13,12 @@ def capture_image(customer_name):
     cam = cv2.VideoCapture(0)
     cv2.namedWindow("Capturing Image")
 
-    # Capture frame-by-frame for 5 seconds
-    start_time = time.time()
+    # Capture frame-by-frame
     ret, frame = cam.read()
-    while int(time.time() - start_time) < 5:
-        ret, frame = cam.read()
-        if not ret:
-            print("Failed to grab frame")
-            break
-        cv2.imshow("Capturing Image", frame)
-        cv2.waitKey(1)
+    if not ret:
+        print("Failed to grab frame")
+        return None
 
-    # Save the captured image
     img_name = f"static/captured_images/{customer_name}_{int(time.time())}.png"
     cv2.imwrite(img_name, frame)
     print(f"{img_name} written!")
@@ -100,6 +94,9 @@ def submit():
         date_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         img_path = capture_image(customer_name)
+        if img_path is None:
+            return "Failed to capture image. Please try again."
+
         recognized_customer = recognize_face(img_path)
 
         discount = False
@@ -107,8 +104,8 @@ def submit():
             discount = True
         elif user_exists(mobile_number):
             discount = True
-        else:
-            store_customer_details(customer_name, mobile_number, product_ordered, img_path, event, date_time)
+        
+        store_customer_details(customer_name, mobile_number, product_ordered, img_path, event, date_time)
 
         return render_template('form.html', customer_name=customer_name, product_ordered=product_ordered, event=event, date_time=date_time, img_path=img_path, discount=discount)
 
