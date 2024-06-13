@@ -109,6 +109,51 @@ def submit():
 
         return render_template('form.html', customer_name=customer_name, product_ordered=product_ordered, event=event, date_time=date_time, img_path=img_path, discount=discount)
 
+products_balloons = [
+    {"name": "Bday Balloons", "price": 60.00, "image": "bn1.jpg"},
+    {"name": "Bday Balloons", "price": 70.00, "image": "bn2.jpg"},
+    {"name": "Bday Balloons", "price": 50.00, "image": "bn3.jpeg"},
+    {"name": "Bday Balloons", "price": 110.00, "image": "bn4.jpg"},
+    {"name": "Valentine Balloons", "price": 70.00, "image": "bn5.jpg"},
+    {"name": "Anniversary Balloons", "price": 110.00, "image": "bn6.jpg"},
+    {"name": "Anniversary Balloons", "price": 115.00, "image": "bn7.jpg"},
+    {"name": "Anniversary Balloons", "price": 200.00, "image": "bn8.webp"},
+    {"name": "Retirement Balloons", "price": 70.00, "image": "bn9.jpg"},
+    {"name": "Retirement Balloons", "price": 110.00, "image": "bn10.jpg"},
+    {"name": "Ballons", "price": 20.00, "image": "bn11.jpg"},
+]
+
+@app.route('/balloons')
+def balloons():
+    return render_template('balloons.html', products=products_balloons)
+
+@app.route('/bdaycards')
+def bdaycards():
+    return render_template('bdaycards.html')
+
+@app.route('/cakes')
+def cakes():
+    return render_template('cakes.html')
+
+@app.route('/candles')
+def candles():
+    return render_template('candles.html')
+
+@app.route('/crowns')
+def crowns():
+    return render_template('crowns.html')
+
+@app.route('/sash')
+def sash():
+    return render_template('sash.html')
+
+
+@app.route('/checkout', methods=['POST'])
+def checkout():
+    product_id = int(request.form['product_id'])
+    product = products[product_id]
+    return render_template('checkout.html', product=product)
+
 if __name__ == "__main__":
     if not os.path.exists('static/captured_images'):
         os.makedirs('static/captured_images')
