@@ -142,15 +142,15 @@ products = [
     {"id":"box1","name": "Bday Cake", "price": 600.00, "image": "box1.jpg"},
     {"id":"cake","name": "Bday Cake", "price": 500.00, "image": "cake.jpeg"},
     {"id":"strawcake","name": "Bday Cake", "price": 700.00, "image": "strawcake.jpg"},
-    {"id":"images","name": "Bday Cake", "price": 450.00, "image": "images.jpg"},
-    {"id":"ac1","name": "Anniversary Cake", "price": 500.00, "image": "ac1.jpg"},
+    {"id":"images","name": "Bday Cake", "price": 450.00, "image": "images.jpeg"},
+    {"id":"ac1","name": "Anniversary Cake", "price": 500.00, "image": "ac1.webp"},
     {"id":"ac2","name": "Anniversary Cake", "price": 400.00, "image": "ac2.jpg"},
     {"id":"ac3","name": "Anniversary Cake", "price": 600.00, "image": "ac3.jpg"},
-    {"id":"ac4","name": "Anniversary Cake", "price": 500.00, "image": "ac4.jpg"},
+    {"id":"ac4","name": "Anniversary Cake", "price": 500.00, "image": "ac4.png"},
     {"id":"ec","name": "Engagement Cake", "price": 550.00, "image": "ec.jpg"},
-    {"id":"ec1","name": "Engagement Cake", "price": 450.00, "image": "ec1.jpg"},
-    {"id":"ec2","name": "Engagement Cake", "price": 600.00, "image": "ec2.jpg"},
-    {"id":"rc","name": "Retirement Cake", "price": 500.00, "image": "rc.jpg"},
+    {"id":"ec1","name": "Engagement Cake", "price": 450.00, "image": "ec1.jpeg"},
+    {"id":"ec2","name": "Engagement Cake", "price": 600.00, "image": "ec2.jpeg"},
+    {"id":"rc","name": "Retirement Cake", "price": 500.00, "image": "rc.jpeg"},
     {"id":"rc1","name": "Retirement Cake", "price": 700.00, "image": "rc1.jpg"},
     
     {"id":"cn1","name": "Number Candles", "price": 20.00 , "image": "cn1.jpg"},
@@ -188,6 +188,7 @@ products = [
     {"id":"s7","name": "Sash Design", "price": 150.00, "image": "s7.jpg"},
     {"id":"s8","name": "Sash Design", "price": 115.00, "image": "s8.jpg"},
     {"id":"s9","name": "Sash Design", "price": 100.00, "image": "s9.jpg"},
+    
     
 ]
 
