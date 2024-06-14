@@ -178,7 +178,7 @@ products = [
     
     {"id":"s1","name": "Sash Design", "price": 150.00, "image": "s1.jpg"},
     {"id":"s2","name": "Sash Design", "price": 100.00, "image": "s2.jpg"},
-    {"id":"s3","name": "Sash Design", "price": 50.00, "image": "s3jpg"},
+    {"id":"s3","name": "Sash Design", "price": 50.00, "image": "s3.jpg"},
     {"id":"s4","name": "Sash Design", "price": 70.00, "image": "s4.jpg"},
     {"id":"s5","name": "Sash Design", "price": 110.00, "image": "s5.jpg"},
     {"id":"s6","name": "Sash Design", "price": 115.00, "image": "s6.jpg"},
@@ -207,11 +207,11 @@ def candles():
 
 @app.route('/crowns')
 def crowns():
-    return render_template('crowns.html', products=products[50:59])
+    return render_template('crowns.html', products=products[50:63])
 
 @app.route('/sash')
 def sash():
-    return render_template('sash.html', products=products[59:])
+    return render_template('sash.html', products=products[63:])
 
 
 @app.route('/checkout', methods=['POST'])
